@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login - HikariNihongo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff8e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+  }
+  .login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .btn {
+    background: linear-gradient(90deg, #16c50c, #07a600);
+    border: none;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: linear-gradient(90deg, #07a600, #16c50c);
+  }
+  .links {
+    margin-top: 15px;
+    font-size: 13px;
+  }
+  .links a {
+    color: #0066cc;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  .social-btns {
+    margin-top: 20px;
+  }
+  .social-btn {
+    cursor: pointer;
+    margin: 8px 0;
+    border-radius: 25px;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    border: none;
+  }
+  .google-btn {
+    background: #de5246;
+  }
+  .facebook-btn {
+    background: #3b5998;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Good to see you again</h2>
+    <form id="loginForm" action="login" method="POST">
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="password" name="password" placeholder="Your password" required />
+      <button type="submit" class="btn">Sign in</button>
+    </form>
+    <div class="links">
+      <a href="register.html">Don't have an account?</a>
+      <a href="forgot-password.html">Forgot password?</a>
+    </div>
+    <div class="social-btns">
+      <button class="social-btn google-btn" id="googleSignInBtn">Sign in with Google</button>
+      <button class="social-btn facebook-btn" id="facebookSignInBtn">Sign in with Facebook</button>
+    </div>
+  </div>
+
+  <!-- Google API SDK -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Facebook SDK -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  <script>
+    // Google sign-in
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: 'YOUR_GOOGLE_CLIENT_ID', // Thay YOUR_GOOGLE_CLIENT_ID bằng Client ID thật của bạn
+        callback: handleGoogleCredentialResponse
+      });
+      document.getElementById('googleSignInBtn').onclick = function () {
+        google.accounts.id.prompt();
+      };
+    };
+
+    function handleGoogleCredentialResponse(response) {
+      // Gửi token Google này về backend để xác thực và login
+      console.log("Google Credential Response:", response);
+      // Ví dụ gọi fetch API backend xử lý:
+      /*
+      fetch('/login-google', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({credential: response.credential})
+      }).then(res => res.json()).then(data => {
+        if (data.success) window.location.href = '/dashboard';
+        else alert('Google login failed');
+      });
+      */
+      alert("Google login demo success! (Bạn cần implement backend xử lý token)");
+    }
+
+    // Facebook sign-in
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : 'YOUR_FACEBOOK_APP_ID', // Thay YOUR_FACEBOOK_APP_ID bằng ID app Facebook của bạn
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v16.0'
+      });
+      document.getElementById('facebookSignInBtn').onclick = function() {
+        FB.login(function(response) {
+          if (response.authResponse) {
+            // Gửi response.authResponse.accessToken về backend để xác thực và login
+            console.log("Facebook accessToken:", response.authResponse.accessToken);
+            alert("Facebook login demo success! (Bạn cần implement backend xử lý token)");
+          } else {
+            alert('Facebook login failed or cancelled.');
+          }
+        }, {scope: 'email'});
+      };
+    };
+  </script>
+</body>
+</html>

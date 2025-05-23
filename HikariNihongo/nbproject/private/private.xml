@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Lesson.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/web/forgot-password.html</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Kanji.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Quiz.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/TestResult.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/FeedbackVote.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Question.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/LessonMaterial.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Chat.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/User.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Feedback.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/web/login.html</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/severlet/RegisterServlet.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Tag.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/QuizResult.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/UserVocabulary.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/dao/DAO.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Flashcard.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Course.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/VideoCall.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/web/WEB-INF/web.xml</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Vocabulary.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/CourseRating.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Answer.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Progress.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/severlet/LoginServlet.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Enrollment.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/PremiumPlan.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/context/DBContext.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Test.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/Role.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/severlet/ForgotPasswordServlet.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/VocabularyKanji.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/GrammarPoint.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/web/META-INF/context.xml</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/UserPremium.java</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/web/dashboard.jsp</file>
+            <file>file:/D:/FPT/SPRING2025/PRJ301/HikariNihongo/src/java/entity/VocabularyTag.java</file>
+        </group>
+    </open-files>
+</project-private>

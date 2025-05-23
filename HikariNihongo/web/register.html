@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register - Mangools</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff8e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .register-container {
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    border-radius: 8px;
+    width: 350px;
+    text-align: center;
+  }
+  .register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .register-container input[type="text"],
+  .register-container input[type="email"],
+  .register-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .btn {
+    background: linear-gradient(90deg, #16c50c, #07a600);
+    border: none;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: linear-gradient(90deg, #07a600, #16c50c);
+  }
+  .links {
+    margin-top: 15px;
+    font-size: 13px;
+  }
+  .links a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Create your account</h2>
+    <form id="registerForm" action="register" method="POST">
+      <input type="text" name="fullname" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="password" name="password" placeholder="Choose password" required minlength="6" />
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <div class="links">
+      <a href="login.html">Already have an account? Sign in</a>
+    </div>
+  </div>
+</body>
+</html>
