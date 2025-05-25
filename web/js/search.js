@@ -15,9 +15,9 @@ function searchTour() {
     fetch(`SearchTourServlet?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
-            allTours = data; // Lưu tất cả tour
+            allTours = data; 
             resultContainer.innerHTML = "";
-            visibleCount = 2; // Reset số tour hiển thị
+            visibleCount = 2; 
 
             if (allTours.length === 0) {
                 resultContainer.innerHTML = "<p>Không tìm thấy tour nào.</p>";
