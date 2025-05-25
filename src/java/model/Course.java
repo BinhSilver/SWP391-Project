@@ -15,6 +15,18 @@ public class Course {
         this.isHidden = isHidden;
     }
 
+    public Course(int courseID, String title, String description) {
+        this.courseID = courseID;
+        this.title = title;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" + "courseID=" + courseID + ", title=" + title + ", description=" + description + ", isHidden=" + isHidden + '}';
+    }
+    
+
     public int getCourseID() {
         return courseID;
     }

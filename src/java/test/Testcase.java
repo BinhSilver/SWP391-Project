@@ -13,8 +13,8 @@ import model.User;
  * @author Admin
  */
 public class Testcase {
-    public  static  void printlist (List<User> a){
-        for(User b : a){
+    public  static  void printlist (List<?> a){
+        for(Object b : a){
             System.out.println(b); 
         }
     }
