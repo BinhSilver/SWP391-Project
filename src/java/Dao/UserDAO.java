@@ -17,8 +17,8 @@ public class UserDAO {
             stmt.setString(3, user.getPasswordHash());
             stmt.setString(4, user.getGoogleID());
             stmt.setString(5, user.getFullName());
-            stmt.setBoolean(6, user.isIsActive());
-            stmt.setBoolean(7, user.isIsLocked());
+            stmt.setBoolean(6, user.isActive());
+            stmt.setBoolean(7, user.isLocked());
             stmt.executeUpdate();
         }
     }
@@ -38,8 +38,8 @@ public class UserDAO {
                 user.setGoogleID(rs.getString("GoogleID"));
                 user.setFullName(rs.getString("FullName"));
                 user.setCreatedAt(rs.getTimestamp("CreatedAt"));
-                user.setIsActive(rs.getBoolean("IsActive"));
-                user.setIsLocked(rs.getBoolean("IsLocked"));
+                user.setActive(rs.getBoolean("IsActive"));
+                user.setLocked(rs.getBoolean("IsLocked"));
                 return user;
             }
         }
@@ -61,8 +61,8 @@ public class UserDAO {
                 user.setGoogleID(rs.getString("GoogleID"));
                 user.setFullName(rs.getString("FullName"));
                 user.setCreatedAt(rs.getTimestamp("CreatedAt"));
-                user.setIsActive(rs.getBoolean("IsActive"));
-                user.setIsLocked(rs.getBoolean("IsLocked"));
+                user.setActive(rs.getBoolean("IsActive"));
+                user.setLocked(rs.getBoolean("IsLocked"));
                 users.add(user);
             }
         }
@@ -78,8 +78,8 @@ public class UserDAO {
             stmt.setString(3, user.getPasswordHash());
             stmt.setString(4, user.getGoogleID());
             stmt.setString(5, user.getFullName());
-            stmt.setBoolean(6, user.isIsActive());
-            stmt.setBoolean(7, user.isIsLocked());
+            stmt.setBoolean(6, user.isActive());
+            stmt.setBoolean(7, user.isLocked());
             stmt.setInt(8, user.getUserID());
             stmt.executeUpdate();
         }
@@ -94,6 +94,63 @@ public class UserDAO {
         }
     }
     
+    public User getUserByEmail(String email) {
+        User user = null;
+        String sql = "SELECT userID, roleID, email, passwordHash, googleID, fullName, createdAt, isActive, isLocked FROM Users WHERE email = ?";
+
+        try (Connection conn = JDBCConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                user = new User();
+                user.setUserID(rs.getInt("userID"));
+                user.setRoleID(rs.getInt("roleID"));
+                user.setEmail(rs.getString("email"));
+                user.setPasswordHash(rs.getString("PasswordHash"));
+                user.setGoogleID(rs.getString("googleID"));
+                user.setFullName(rs.getString("fullName"));
+                user.setCreatedAt(rs.getDate("createdAt"));
+                user.setActive(rs.getBoolean("isActive"));
+                user.setLocked(rs.getBoolean("isLocked"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+    
+    public boolean createNewUser(String email, String rawPassword) {
+    String sql = "INSERT INTO Users (RoleID, Email, PasswordHash) VALUES (?, ?, ?)";
+
+    try (Connection conn = JDBCConnection.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        if (conn == null) {
+            System.out.println("Connection null!");
+            return false;
+        }
+
+        pstmt.setInt(1, 1); // role mặc định
+        pstmt.setString(2, email);
+        pstmt.setString(3, rawPassword); // lưu mật khẩu thô vào PasswordHash
+
+        int rowsInserted = pstmt.executeUpdate();
+        return rowsInserted > 0;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
+
+
+ 
     public static void main(String[] args) throws SQLException {
         UserDAO a = new UserDAO();
         test.Testcase.printlist(a.getAllUsers());

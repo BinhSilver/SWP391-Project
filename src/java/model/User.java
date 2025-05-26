@@ -94,21 +94,19 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public boolean isIsActive() {
+    public boolean isActive() {
         return isActive;
     }
 
-    public void setIsActive(boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.isActive = active;
     }
 
-    public boolean isIsLocked() {
+    public boolean isLocked() {
         return isLocked;
     }
 
-    public void setIsLocked(boolean isLocked) {
-        this.isLocked = isLocked;
+    public void setLocked(boolean locked) {
+        this.isLocked = locked;
     }
-
-   
 }
